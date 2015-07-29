@@ -10,6 +10,18 @@ import UIKit
 
 class SharedBookViewController: UIViewController {
 
+    @IBOutlet weak var bookPicture: UIImageView!
+    @IBOutlet weak var bookTitle: UILabel!
+    @IBOutlet weak var bookAuthor: UILabel!
+    @IBOutlet weak var bookSharedBy: UILabel!
+    @IBOutlet weak var bookSharingText: UITextView!
+    
+    @IBOutlet weak var bookRating1: UIButton!
+    @IBOutlet weak var bookRating2: UIButton!
+    @IBOutlet weak var bookRating3: UIButton!
+    @IBOutlet weak var bookRating4: UIButton!
+    @IBOutlet weak var bookRating5: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,6 +46,48 @@ class SharedBookViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func rate(sender: UIButton) {
+        switch sender {
+        case bookRating1:
+            println("rating 1")
+            break
+        case bookRating2:
+            println("rating 2")
+            break
+        case bookRating3:
+            println("rating 3")
+            break
+        case bookRating4:
+            println("rating 4")
+            break
+        case bookRating5:
+            println("rating 5")
+            break
+        default:
+            println("rating 0")
+        }
+    }
+    
+    @IBAction func reshare(sender: UIButton) {
+        println("reshare")
+    }
+    
+    @IBAction func shareOnFacebook(sender: UIButton!) {
+        println("shareOnFacebook")
+    }
+    
+    @IBAction func shareOnTwitter(sender: UIButton!) {
+        println("shareOnTwitter")
+    }
+    
+    @IBAction func shareOnInstagram(sender: UIButton!) {
+        println("shareOnInstagram")
+    }
+    
+    @IBAction func postComment(sender: UIButton) {
+        println("postComment")
     }
     
     /*

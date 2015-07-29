@@ -14,13 +14,15 @@ class Book: NSObject {
     var title:String
     var author:String
     var sharedBy:String
+    var sharingText:String
     var rating:Int
     
-    init(picture:String, title:String, author:String, sharedBy:String, rating:Int) {
+    init(picture:String, title:String, author:String, sharedBy:String, sharingText:String, rating:Int) {
         self.picture = picture
         self.title = title
         self.author = author
         self.sharedBy = sharedBy
+        self.sharingText = sharingText
         self.rating = rating
     }
 }

@@ -13,7 +13,7 @@ class ViewController: UIViewController, SidebarDelegate, UITableViewDataSource, 
     @IBOutlet weak var sharedBookTableView: UITableView!
     
     var sidebar:Sidebar = Sidebar()
-    var sharedBooks:Array<Book> = [Book(picture: "batman_logo.png", title: "Batman Begins", author: "Zé Guaruis", sharedBy: "Bruce Wayne", rating: 3), Book(picture: "batman_logo.png", title: "Batman Dark Knight", author: "Zé Panguan", sharedBy: "Leandro Silva", rating: 5)]
+    var sharedBooks:Array<Book> = [Book(picture: "batman_logo.png", title: "Batman Begins", author: "Zé Guaruis", sharedBy: "Bruce Wayne", sharingText: "Lorem ipsum", rating: 3), Book(picture: "batman_logo.png", title: "Batman Dark Knight", author: "Zé Panguan", sharedBy: "Leandro Silva", sharingText: "Lorem ipsum", rating: 5)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,12 +62,12 @@ class ViewController: UIViewController, SidebarDelegate, UITableViewDataSource, 
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = sharedBookTableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! SharedBookTableViewCell
+        var cell = sharedBookTableView.dequeueReusableCellWithIdentifier("SharedBookCell", forIndexPath: indexPath) as! SharedBookTableViewCell
         
         cell.bookPicture.image = UIImage(named: sharedBooks[indexPath.row].picture)
         cell.bookTitle.text = sharedBooks[indexPath.row].title
         cell.bookAuthor.text = sharedBooks[indexPath.row].author
-        cell.bookSharedBy.text = sharedBooks[indexPath.row].sharedBy
+        cell.bookSharedBy.text = "by " + sharedBooks[indexPath.row].sharedBy
         cell.bookRating.text = String(sharedBooks[indexPath.row].rating)
         
         return cell

@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="93" id="uXu-qN-ouG" customClass="SharedBookTableViewCell" customModule="NowIAmReading" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SharedBookCell" rowHeight="93" id="uXu-qN-ouG" customClass="SharedBookTableViewCell" customModule="NowIAmReading" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uXu-qN-ouG" id="4TV-Rk-qn0">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -98,7 +98,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="batman_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="eTh-EZ-ju6">
                                 <rect key="frame" x="95" y="148" width="130" height="130"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DK1-qb-n5y">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DK1-qb-n5y">
                                 <rect key="frame" x="16" y="286" width="288" height="154"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <attributedString key="attributedText">
@@ -121,6 +121,9 @@
                                         <state key="normal" title="★">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="rate:" destination="eEj-70-M1W" eventType="touchUpInside" id="dQO-iz-ZL2"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q1u-ci-MZX">
                                         <rect key="frame" x="34" y="2" width="30" height="30"/>
@@ -128,6 +131,9 @@
                                         <state key="normal" title="★">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="rate:" destination="eEj-70-M1W" eventType="touchUpInside" id="nCo-Zk-b28"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hfh-3y-36C">
                                         <rect key="frame" x="66" y="2" width="30" height="30"/>
@@ -135,6 +141,9 @@
                                         <state key="normal" title="☆">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="rate:" destination="eEj-70-M1W" eventType="touchUpInside" id="Wed-SJ-m8W"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kzg-sF-bz4">
                                         <rect key="frame" x="98" y="2" width="30" height="30"/>
@@ -142,6 +151,9 @@
                                         <state key="normal" title="☆">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="rate:" destination="eEj-70-M1W" eventType="touchUpInside" id="z4o-Ja-hNN"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QVh-Kb-iMm">
                                         <rect key="frame" x="130" y="2" width="30" height="30"/>
@@ -149,6 +161,9 @@
                                         <state key="normal" title="☆">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="rate:" destination="eEj-70-M1W" eventType="touchUpInside" id="Y6E-9e-Cr6"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -157,21 +172,33 @@
                                 <rect key="frame" x="189" y="449" width="25" height="25"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <state key="normal" image="upload_filled.png"/>
+                                <connections>
+                                    <action selector="reshare:" destination="eEj-70-M1W" eventType="touchUpInside" id="W4N-I0-2bP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="chs-Hb-Sr5">
                                 <rect key="frame" x="219" y="449" width="25" height="25"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <state key="normal" image="facebook_filled.png"/>
+                                <connections>
+                                    <action selector="shareOnFacebook:" destination="eEj-70-M1W" eventType="touchUpInside" id="7dO-hv-uSZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3FJ-9m-JzG">
                                 <rect key="frame" x="249" y="449" width="25" height="25"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <state key="normal" image="twitter_filled.png"/>
+                                <connections>
+                                    <action selector="shareOnTwitter:" destination="eEj-70-M1W" eventType="touchUpInside" id="VlT-ZN-R7i"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ISV-Nz-Uh0">
                                 <rect key="frame" x="279" y="449" width="25" height="25"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <state key="normal" image="instagram_filled.png"/>
+                                <connections>
+                                    <action selector="shareOnInstagram:" destination="eEj-70-M1W" eventType="touchUpInside" id="x1E-qT-7ai"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Book Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMM-22-u18">
                                 <rect key="frame" x="16" y="70" width="288" height="21"/>
@@ -201,11 +228,26 @@
                                 <state key="normal" title="Post">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="postComment:" destination="eEj-70-M1W" eventType="touchUpInside" id="eXT-TM-Xhb"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="bookAuthor" destination="YSx-oe-rIs" id="9z0-Sr-ICC"/>
+                        <outlet property="bookPicture" destination="eTh-EZ-ju6" id="I0P-2r-x8D"/>
+                        <outlet property="bookRating1" destination="9Fx-oz-tGi" id="eeD-iC-PB2"/>
+                        <outlet property="bookRating2" destination="Q1u-ci-MZX" id="KaF-wF-FBP"/>
+                        <outlet property="bookRating3" destination="Hfh-3y-36C" id="Ka0-XI-YIf"/>
+                        <outlet property="bookRating4" destination="kzg-sF-bz4" id="bHY-AZ-272"/>
+                        <outlet property="bookRating5" destination="QVh-Kb-iMm" id="r9n-kW-LGp"/>
+                        <outlet property="bookSharedBy" destination="RyT-Qf-d4v" id="sSJ-KY-VXy"/>
+                        <outlet property="bookSharingText" destination="DK1-qb-n5y" id="cCQ-wp-yYM"/>
+                        <outlet property="bookTitle" destination="xMM-22-u18" id="4xT-9L-GKe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IN8-VD-tdu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
