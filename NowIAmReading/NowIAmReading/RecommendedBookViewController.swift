@@ -14,7 +14,7 @@ class RecommendedBookViewController: UIViewController {
     @IBOutlet weak var bookTitle: UILabel!
     @IBOutlet weak var bookAuthor: UILabel!
     @IBOutlet weak var bookRecommendedBy: UILabel!
-    @IBOutlet weak var bookSharingText: UITextView!
+    @IBOutlet weak var bookRecommendationText: UITextView!
     
     @IBOutlet weak var bookRating1: UIButton!
     @IBOutlet weak var bookRating2: UIButton!
@@ -22,12 +22,19 @@ class RecommendedBookViewController: UIViewController {
     @IBOutlet weak var bookRating4: UIButton!
     @IBOutlet weak var bookRating5: UIButton!
     
+    var book:Book?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
 
+        bookPicture.image = UIImage(named: book!.picture)
+        bookTitle.text = book!.title
+        bookAuthor.text = book!.author
+        bookRecommendedBy.text = book!.recommendedBy
+        bookRecommendationText.text = book!.recommendationText
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {

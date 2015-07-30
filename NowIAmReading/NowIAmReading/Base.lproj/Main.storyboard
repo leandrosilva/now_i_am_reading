@@ -244,8 +244,8 @@
                         <outlet property="bookRating3" destination="Hfh-3y-36C" id="Ka0-XI-YIf"/>
                         <outlet property="bookRating4" destination="kzg-sF-bz4" id="bHY-AZ-272"/>
                         <outlet property="bookRating5" destination="QVh-Kb-iMm" id="r9n-kW-LGp"/>
+                        <outlet property="bookRecommendationText" destination="DK1-qb-n5y" id="TiF-fA-mVk"/>
                         <outlet property="bookRecommendedBy" destination="RyT-Qf-d4v" id="sSJ-KY-VXy"/>
-                        <outlet property="bookSharingText" destination="DK1-qb-n5y" id="cCQ-wp-yYM"/>
                         <outlet property="bookTitle" destination="xMM-22-u18" id="4xT-9L-GKe"/>
                     </connections>
                 </viewController>

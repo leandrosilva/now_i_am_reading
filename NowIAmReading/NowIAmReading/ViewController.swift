@@ -13,7 +13,10 @@ class ViewController: UIViewController, SidebarDelegate, UITableViewDataSource, 
     @IBOutlet weak var recommendedBookTableView: UITableView!
     
     var sidebar:Sidebar = Sidebar()
-    var recommendedBooks:Array<Book> = [Book(picture: "batman_logo.png", title: "Batman Begins", author: "Zé Guaruis", recommendedBy: "Bruce Wayne", recommendationText: "Lorem ipsum", rating: 3), Book(picture: "batman_logo.png", title: "Batman Dark Knight", author: "Zé Panguan", recommendedBy: "Leandro Silva", recommendationText: "Lorem ipsum", rating: 5)]
+    
+    var recommendedBooks:Array<Book> = [Book(picture: "batman_logo.png", title: "Batman Begins", author: "Zé Guaruis", recommendedBy: "Bruce Wayne", recommendationText: "Lorem ipsum dolor sit er elit lamet", rating: 3), Book(picture: "batman_logo.png", title: "Batman Dark Knight", author: "Zé Panguan", recommendedBy: "Leandro Silva", recommendationText: "Ut enim ad minim veniam", rating: 5)]
+    
+    var selectedBook:Book?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,7 +79,19 @@ class ViewController: UIViewController, SidebarDelegate, UITableViewDataSource, 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         recommendedBookTableView.deselectRowAtIndexPath(indexPath, animated: true)
         
+        var cell = recommendedBookTableView.dequeueReusableCellWithIdentifier("RecommendedBookCell", forIndexPath: indexPath) as! RecommendedBookTableViewCell
+        
+        self.selectedBook = self.recommendedBooks[indexPath.row]
+            
         self.performSegueWithIdentifier("RecommendedBook", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "RecommendedBook" {
+            var recommendedBookViewController = segue.destinationViewController as! RecommendedBookViewController
+            
+            recommendedBookViewController.book = self.selectedBook
+        }
     }
 }
 
