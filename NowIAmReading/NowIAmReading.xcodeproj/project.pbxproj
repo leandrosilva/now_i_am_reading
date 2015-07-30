@@ -100,11 +100,11 @@
 			isa = PBXGroup;
 			children = (
 				9CB413261B67FE5C00B3D325 /* AppDelegate.swift */,
-				9CB4132B1B67FE5C00B3D325 /* ViewController.swift */,
-				9CB413671B69672B00B3D325 /* RecommendedBookTableViewCell.swift */,
 				9CB4132D1B67FE5C00B3D325 /* Main.storyboard */,
+				9CB413671B69672B00B3D325 /* RecommendedBookTableViewCell.swift */,
+				9CB4132B1B67FE5C00B3D325 /* ViewController.swift */,
 				9CB413591B6950E300B3D325 /* RecommendedBookViewController.swift */,
-				9CB413691B69692E00B3D325 /* Book.swift */,
+				9CB4136B1B6A5E6900B3D325 /* Models */,
 				9CB413301B67FE5C00B3D325 /* Images.xcassets */,
 				9CB413321B67FE5C00B3D325 /* LaunchScreen.xib */,
 				9CB413281B67FE5C00B3D325 /* NowIAmReading.xcdatamodeld */,
@@ -159,6 +159,14 @@
 				9CB413651B6962A300B3D325 /* upload_filled.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		9CB4136B1B6A5E6900B3D325 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9CB413691B69692E00B3D325 /* Book.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -469,6 +477,7 @@
 				9CB413451B67FE5C00B3D325 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9CB413461B67FE5C00B3D325 /* Build configuration list for PBXNativeTarget "NowIAmReadingTests" */ = {
 			isa = XCConfigurationList;
@@ -477,6 +486,7 @@
 				9CB413481B67FE5C00B3D325 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
