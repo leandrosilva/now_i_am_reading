@@ -1,5 +1,5 @@
 //
-//  SharedBookViewController.swift
+//  RecommendedBookViewController.swift
 //  NowIAmReading
 //
 //  Created by Leandro Silva on 7/29/15.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class SharedBookViewController: UIViewController {
+class RecommendedBookViewController: UIViewController {
 
     @IBOutlet weak var bookPicture: UIImageView!
     @IBOutlet weak var bookTitle: UILabel!
     @IBOutlet weak var bookAuthor: UILabel!
-    @IBOutlet weak var bookSharedBy: UILabel!
+    @IBOutlet weak var bookRecommendedBy: UILabel!
     @IBOutlet weak var bookSharingText: UITextView!
     
     @IBOutlet weak var bookRating1: UIButton!
@@ -70,8 +70,8 @@ class SharedBookViewController: UIViewController {
         }
     }
     
-    @IBAction func reshare(sender: UIButton) {
-        println("reshare")
+    @IBAction func recommend(sender: UIButton) {
+        println("recommend")
     }
     
     @IBAction func shareOnFacebook(sender: UIButton!) {

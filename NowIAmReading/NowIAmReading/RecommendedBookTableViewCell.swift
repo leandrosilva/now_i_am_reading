@@ -1,5 +1,5 @@
 //
-//  SharedBookTableViewCell.swift
+//  RecommendedBookTableViewCell.swift
 //  NowIAmReading
 //
 //  Created by Leandro Silva on 7/29/15.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class SharedBookTableViewCell: UITableViewCell {
+class RecommendedBookTableViewCell: UITableViewCell {
 
     @IBOutlet weak var bookPicture: UIImageView!
     @IBOutlet weak var bookTitle: UILabel!
     @IBOutlet weak var bookAuthor: UILabel!
-    @IBOutlet weak var bookSharedBy: UILabel!
+    @IBOutlet weak var bookRecommendedBy: UILabel!
     @IBOutlet weak var bookRating: UILabel!
     
     override func awakeFromNib() {

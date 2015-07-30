@@ -10,10 +10,10 @@ import UIKit
 
 class ViewController: UIViewController, SidebarDelegate, UITableViewDataSource, UITableViewDelegate {
 
-    @IBOutlet weak var sharedBookTableView: UITableView!
+    @IBOutlet weak var recommendedBookTableView: UITableView!
     
     var sidebar:Sidebar = Sidebar()
-    var sharedBooks:Array<Book> = [Book(picture: "batman_logo.png", title: "Batman Begins", author: "Zé Guaruis", sharedBy: "Bruce Wayne", sharingText: "Lorem ipsum", rating: 3), Book(picture: "batman_logo.png", title: "Batman Dark Knight", author: "Zé Panguan", sharedBy: "Leandro Silva", sharingText: "Lorem ipsum", rating: 5)]
+    var recommendedBooks:Array<Book> = [Book(picture: "batman_logo.png", title: "Batman Begins", author: "Zé Guaruis", recommendedBy: "Bruce Wayne", recommendationText: "Lorem ipsum", rating: 3), Book(picture: "batman_logo.png", title: "Batman Dark Knight", author: "Zé Panguan", recommendedBy: "Leandro Silva", recommendationText: "Lorem ipsum", rating: 5)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +21,8 @@ class ViewController: UIViewController, SidebarDelegate, UITableViewDataSource, 
         sidebar = Sidebar(sourceView: self.view, menuItems: ["Home", "Profile", "Readings", "Friends"])
         sidebar.delegate = self
         
-        sharedBookTableView.delegate = self
-        sharedBookTableView.dataSource = self
+        recommendedBookTableView.delegate = self
+        recommendedBookTableView.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,25 +58,25 @@ class ViewController: UIViewController, SidebarDelegate, UITableViewDataSource, 
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sharedBooks.count
+        return recommendedBooks.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = sharedBookTableView.dequeueReusableCellWithIdentifier("SharedBookCell", forIndexPath: indexPath) as! SharedBookTableViewCell
+        var cell = recommendedBookTableView.dequeueReusableCellWithIdentifier("RecommendedBookCell", forIndexPath: indexPath) as! RecommendedBookTableViewCell
         
-        cell.bookPicture.image = UIImage(named: sharedBooks[indexPath.row].picture)
-        cell.bookTitle.text = sharedBooks[indexPath.row].title
-        cell.bookAuthor.text = sharedBooks[indexPath.row].author
-        cell.bookSharedBy.text = "by " + sharedBooks[indexPath.row].sharedBy
-        cell.bookRating.text = String(sharedBooks[indexPath.row].rating)
+        cell.bookPicture.image = UIImage(named: recommendedBooks[indexPath.row].picture)
+        cell.bookTitle.text = recommendedBooks[indexPath.row].title
+        cell.bookAuthor.text = recommendedBooks[indexPath.row].author
+        cell.bookRecommendedBy.text = "by " + recommendedBooks[indexPath.row].recommendedBy
+        cell.bookRating.text = String(recommendedBooks[indexPath.row].rating)
         
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        sharedBookTableView.deselectRowAtIndexPath(indexPath, animated: true)
+        recommendedBookTableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        self.performSegueWithIdentifier("SharedBook", sender: self)
+        self.performSegueWithIdentifier("RecommendedBook", sender: self)
     }
 }
 

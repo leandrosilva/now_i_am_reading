@@ -17,12 +17,12 @@
 		9CB4134B1B67FFAD00B3D325 /* Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB413491B67FFAD00B3D325 /* Sidebar.swift */; };
 		9CB4134C1B67FFAD00B3D325 /* SidebarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB4134A1B67FFAD00B3D325 /* SidebarTableViewController.swift */; };
 		9CB413551B691FA800B3D325 /* batman_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB413541B691FA800B3D325 /* batman_logo.png */; };
-		9CB4135A1B6950E300B3D325 /* SharedBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB413591B6950E300B3D325 /* SharedBookViewController.swift */; };
+		9CB4135A1B6950E300B3D325 /* RecommendedBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB413591B6950E300B3D325 /* RecommendedBookViewController.swift */; };
 		9CB4135C1B695B2B00B3D325 /* twitter_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB4135B1B695B2B00B3D325 /* twitter_filled.png */; };
 		9CB4135E1B695B3400B3D325 /* facebook_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB4135D1B695B3400B3D325 /* facebook_filled.png */; };
 		9CB413641B695BD800B3D325 /* instagram_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB413631B695BD800B3D325 /* instagram_filled.png */; };
 		9CB413661B6962A300B3D325 /* upload_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB413651B6962A300B3D325 /* upload_filled.png */; };
-		9CB413681B69672B00B3D325 /* SharedBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB413671B69672B00B3D325 /* SharedBookTableViewCell.swift */; };
+		9CB413681B69672B00B3D325 /* RecommendedBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB413671B69672B00B3D325 /* RecommendedBookTableViewCell.swift */; };
 		9CB4136A1B69692E00B3D325 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB413691B69692E00B3D325 /* Book.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,12 +51,12 @@
 		9CB413491B67FFAD00B3D325 /* Sidebar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sidebar.swift; sourceTree = "<group>"; };
 		9CB4134A1B67FFAD00B3D325 /* SidebarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarTableViewController.swift; sourceTree = "<group>"; };
 		9CB413541B691FA800B3D325 /* batman_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batman_logo.png; sourceTree = "<group>"; };
-		9CB413591B6950E300B3D325 /* SharedBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedBookViewController.swift; sourceTree = "<group>"; };
+		9CB413591B6950E300B3D325 /* RecommendedBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendedBookViewController.swift; sourceTree = "<group>"; };
 		9CB4135B1B695B2B00B3D325 /* twitter_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_filled.png; sourceTree = "<group>"; };
 		9CB4135D1B695B3400B3D325 /* facebook_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook_filled.png; sourceTree = "<group>"; };
 		9CB413631B695BD800B3D325 /* instagram_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = instagram_filled.png; sourceTree = "<group>"; };
 		9CB413651B6962A300B3D325 /* upload_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upload_filled.png; sourceTree = "<group>"; };
-		9CB413671B69672B00B3D325 /* SharedBookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedBookTableViewCell.swift; sourceTree = "<group>"; };
+		9CB413671B69672B00B3D325 /* RecommendedBookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendedBookTableViewCell.swift; sourceTree = "<group>"; };
 		9CB413691B69692E00B3D325 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,9 +101,9 @@
 			children = (
 				9CB413261B67FE5C00B3D325 /* AppDelegate.swift */,
 				9CB4132B1B67FE5C00B3D325 /* ViewController.swift */,
-				9CB413671B69672B00B3D325 /* SharedBookTableViewCell.swift */,
+				9CB413671B69672B00B3D325 /* RecommendedBookTableViewCell.swift */,
 				9CB4132D1B67FE5C00B3D325 /* Main.storyboard */,
-				9CB413591B6950E300B3D325 /* SharedBookViewController.swift */,
+				9CB413591B6950E300B3D325 /* RecommendedBookViewController.swift */,
 				9CB413691B69692E00B3D325 /* Book.swift */,
 				9CB413301B67FE5C00B3D325 /* Images.xcassets */,
 				9CB413321B67FE5C00B3D325 /* LaunchScreen.xib */,
@@ -267,8 +267,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CB4132C1B67FE5C00B3D325 /* ViewController.swift in Sources */,
-				9CB4135A1B6950E300B3D325 /* SharedBookViewController.swift in Sources */,
-				9CB413681B69672B00B3D325 /* SharedBookTableViewCell.swift in Sources */,
+				9CB4135A1B6950E300B3D325 /* RecommendedBookViewController.swift in Sources */,
+				9CB413681B69672B00B3D325 /* RecommendedBookTableViewCell.swift in Sources */,
 				9CB413271B67FE5C00B3D325 /* AppDelegate.swift in Sources */,
 				9CB4136A1B69692E00B3D325 /* Book.swift in Sources */,
 				9CB4134B1B67FFAD00B3D325 /* Sidebar.swift in Sources */,

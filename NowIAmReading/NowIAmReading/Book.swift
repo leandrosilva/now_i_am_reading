@@ -13,16 +13,16 @@ class Book: NSObject {
     var picture:String
     var title:String
     var author:String
-    var sharedBy:String
-    var sharingText:String
+    var recommendedBy:String
+    var recommendationText:String
     var rating:Int
     
-    init(picture:String, title:String, author:String, sharedBy:String, sharingText:String, rating:Int) {
+    init(picture:String, title:String, author:String, recommendedBy:String, recommendationText:String, rating:Int) {
         self.picture = picture
         self.title = title
         self.author = author
-        self.sharedBy = sharedBy
-        self.sharingText = sharingText
+        self.recommendedBy = recommendedBy
+        self.recommendationText = recommendationText
         self.rating = rating
     }
 }
