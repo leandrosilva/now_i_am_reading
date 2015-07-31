@@ -236,7 +236,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="EuZ-0E-KuJ">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="5ai-pJ-IEv">
+                        <barButtonItem key="leftBarButtonItem" title="Recommendations" id="5ai-pJ-IEv">
                             <connections>
                                 <segue destination="mo4-wc-dv2" kind="unwind" unwindAction="unwindToSegue:" id="ine-3p-2rq"/>
                             </connections>

@@ -113,7 +113,7 @@ class ViewController: UIViewController, SidebarDelegate, UITableViewDataSource, 
         }
     }
     
-    @IBAction func unwindToSegue (segue : UIStoryboardSegue) {
+    @IBAction func unwindToSegue(segue: UIStoryboardSegue) {
         recommendedBookTableView.reloadData()
     }
 }
