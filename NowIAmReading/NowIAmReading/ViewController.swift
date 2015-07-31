@@ -12,11 +12,11 @@ class ViewController: UIViewController, SidebarDelegate, UITableViewDataSource, 
 
     @IBOutlet weak var recommendedBookTableView: UITableView!
     
-    var sidebar:Sidebar = Sidebar()
+    var sidebar: Sidebar = Sidebar()
     
     var recommendedBooks:Array<Book> = [Book(picture: "batman_logo.png", title: "Batman Begins", author: "Zé Guaruis", recommendedBy: "Bruce Wayne", recommendationText: "Lorem ipsum dolor sit er elit lamet", rating: 3), Book(picture: "batman_logo.png", title: "Batman Dark Knight", author: "Zé Panguan", recommendedBy: "Leandro Silva", recommendationText: "Ut enim ad minim veniam", rating: 5)]
     
-    var selectedBook:Book?
+    var selectedBook: Book?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +37,7 @@ class ViewController: UIViewController, SidebarDelegate, UITableViewDataSource, 
         sidebar.showSidebar(!sidebar.isSidebarOpen)
     }
     
-    func sidebarDidSelectButtonAtIndex(index:Int) {
+    func sidebarDidSelectButtonAtIndex(index: Int) {
         switch index {
         case 0:
             println(index+1)
@@ -71,9 +71,28 @@ class ViewController: UIViewController, SidebarDelegate, UITableViewDataSource, 
         cell.bookTitle.text = recommendedBooks[indexPath.row].title
         cell.bookAuthor.text = recommendedBooks[indexPath.row].author
         cell.bookRecommendedBy.text = "by " + recommendedBooks[indexPath.row].recommendedBy
-        cell.bookRating.text = String(recommendedBooks[indexPath.row].rating)
+        cell.bookRating.text = figureOutRatingStarts(recommendedBooks[indexPath.row].rating)
         
         return cell
+    }
+    
+    func figureOutRatingStarts(rating: Int) -> String {
+        switch rating {
+        case 0:
+            return "☆☆☆☆☆"
+        case 1:
+            return "★☆☆☆☆"
+        case 2:
+            return "★★☆☆☆"
+        case 3:
+            return "★★★☆☆"
+        case 4:
+            return "★★★★☆"
+        case 5:
+            return "★★★★★"
+        default:
+            return "☆☆☆☆☆"
+        }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -92,6 +111,10 @@ class ViewController: UIViewController, SidebarDelegate, UITableViewDataSource, 
             
             recommendedBookViewController.book = self.selectedBook
         }
+    }
+    
+    @IBAction func unwindToSegue (segue : UIStoryboardSegue) {
+        recommendedBookTableView.reloadData()
     }
 }
 

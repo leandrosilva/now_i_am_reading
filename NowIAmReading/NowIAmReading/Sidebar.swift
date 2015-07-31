@@ -16,21 +16,21 @@ import UIKit
 
 class Sidebar: NSObject, SidebarTableViewControllerDelegate {
     
-    let barWidth:CGFloat = 150.0
-    let sidebarTableViewTopInset:CGFloat = 64.0
-    let sidebarContainerView:UIView = UIView()
-    let sidebarTableViewController:SidebarTableViewController = SidebarTableViewController()
+    let barWidth: CGFloat = 150.0
+    let sidebarTableViewTopInset: CGFloat = 64.0
+    let sidebarContainerView: UIView = UIView()
+    let sidebarTableViewController: SidebarTableViewController = SidebarTableViewController()
 
-    var originView:UIView?
-    var animator:UIDynamicAnimator?
-    var delegate:SidebarDelegate?
-    var isSidebarOpen:Bool = false
+    var originView: UIView?
+    var animator: UIDynamicAnimator?
+    var delegate: SidebarDelegate?
+    var isSidebarOpen: Bool = false
     
     override init() {
         super.init()
     }
     
-    init(sourceView:UIView, menuItems:Array<String>) {
+    init(sourceView: UIView, menuItems: Array<String>) {
         super.init()
         
         originView = sourceView
@@ -39,11 +39,11 @@ class Sidebar: NSObject, SidebarTableViewControllerDelegate {
         
         setupSidebar()
         
-        let showGestureRecognizer:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "handleSwipe:")
+        let showGestureRecognizer: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "handleSwipe:")
         showGestureRecognizer.direction = UISwipeGestureRecognizerDirection.Right
         originView!.addGestureRecognizer(showGestureRecognizer)
         
-        let hideGestureRecognizer:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "handleSwipe:")
+        let hideGestureRecognizer: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "handleSwipe:")
         hideGestureRecognizer.direction = UISwipeGestureRecognizerDirection.Left
         originView!.addGestureRecognizer(hideGestureRecognizer)
     }
@@ -55,7 +55,7 @@ class Sidebar: NSObject, SidebarTableViewControllerDelegate {
         
         originView!.addSubview(sidebarContainerView)
         
-        let blurryView:UIVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Light))
+        let blurryView: UIVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Light))
         blurryView.frame = sidebarContainerView.bounds
         sidebarContainerView.addSubview(blurryView)
         
@@ -71,7 +71,7 @@ class Sidebar: NSObject, SidebarTableViewControllerDelegate {
         sidebarContainerView.addSubview(sidebarTableViewController.tableView)
     }
     
-    func handleSwipe(recognizer:UISwipeGestureRecognizer) {
+    func handleSwipe(recognizer: UISwipeGestureRecognizer) {
         if recognizer.direction == UISwipeGestureRecognizerDirection.Left {
             showSidebar(false)
             delegate?.sidebarWillClose?()
@@ -80,27 +80,27 @@ class Sidebar: NSObject, SidebarTableViewControllerDelegate {
         }
     }
     
-    func showSidebar(shouldOpen:Bool) {
+    func showSidebar(shouldOpen: Bool) {
         animator!.removeAllBehaviors()
         isSidebarOpen = shouldOpen
         
-        let gravityX:CGFloat = (shouldOpen) ? 0.5 : -0.5
-        let magnitude:CGFloat = (shouldOpen) ? 20 : -20
-        let boundaryX:CGFloat = (shouldOpen) ? barWidth : -barWidth - 1
+        let gravityX: CGFloat = (shouldOpen) ? 0.5 : -0.5
+        let magnitude: CGFloat = (shouldOpen) ? 20 : -20
+        let boundaryX: CGFloat = (shouldOpen) ? barWidth : -barWidth - 1
         
-        let gravityBehavior:UIGravityBehavior = UIGravityBehavior(items: [sidebarContainerView])
+        let gravityBehavior: UIGravityBehavior = UIGravityBehavior(items: [sidebarContainerView])
         gravityBehavior.gravityDirection = CGVectorMake(gravityX, 0)
         animator!.addBehavior(gravityBehavior)
         
-        let collisionBehavior:UICollisionBehavior = UICollisionBehavior(items: [sidebarContainerView])
+        let collisionBehavior: UICollisionBehavior = UICollisionBehavior(items: [sidebarContainerView])
         collisionBehavior.addBoundaryWithIdentifier("sidebarBoundary", fromPoint: CGPointMake(boundaryX, 20), toPoint: CGPointMake(boundaryX, originView!.frame.size.height))
         animator!.addBehavior(collisionBehavior)
         
-        let pushBehavior:UIPushBehavior = UIPushBehavior(items: [sidebarContainerView], mode: UIPushBehaviorMode.Instantaneous)
+        let pushBehavior: UIPushBehavior = UIPushBehavior(items: [sidebarContainerView], mode: UIPushBehaviorMode.Instantaneous)
         pushBehavior.magnitude = magnitude
         animator!.addBehavior(pushBehavior)
         
-        let sidebarBehavior:UIDynamicItemBehavior = UIDynamicItemBehavior(items: [sidebarContainerView])
+        let sidebarBehavior: UIDynamicItemBehavior = UIDynamicItemBehavior(items: [sidebarContainerView])
         sidebarBehavior.elasticity = 0.3
         animator!.addBehavior(sidebarBehavior)
     }

@@ -68,7 +68,7 @@
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="B9X-8v-hk4">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="b5G-3c-WAb">
+                        <barButtonItem key="leftBarButtonItem" image="menu_filled.png" id="b5G-3c-WAb">
                             <connections>
                                 <action selector="toggleMenu:" destination="vXZ-lx-hvc" id="l1o-Mo-Dn1"/>
                             </connections>
@@ -235,6 +235,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="EuZ-0E-KuJ">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="5ai-pJ-IEv">
+                            <connections>
+                                <segue destination="mo4-wc-dv2" kind="unwind" unwindAction="unwindToSegue:" id="ine-3p-2rq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="bookAuthor" destination="YSx-oe-rIs" id="9z0-Sr-ICC"/>
@@ -250,6 +257,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IN8-VD-tdu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="mo4-wc-dv2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1176" y="297"/>
         </scene>
@@ -277,6 +285,7 @@
         <image name="batman_logo.png" width="345" height="345"/>
         <image name="facebook_filled.png" width="50" height="50"/>
         <image name="instagram_filled.png" width="50" height="50"/>
+        <image name="menu_filled.png" width="25" height="25"/>
         <image name="twitter_filled.png" width="50" height="50"/>
         <image name="upload_filled.png" width="50" height="50"/>
     </resources>

@@ -24,6 +24,7 @@
 		9CB413661B6962A300B3D325 /* upload_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB413651B6962A300B3D325 /* upload_filled.png */; };
 		9CB413681B69672B00B3D325 /* RecommendedBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB413671B69672B00B3D325 /* RecommendedBookTableViewCell.swift */; };
 		9CB4136A1B69692E00B3D325 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB413691B69692E00B3D325 /* Book.swift */; };
+		9CB4138F1B6C121500B3D325 /* menu_filled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB4138E1B6C121500B3D325 /* menu_filled@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		9CB413651B6962A300B3D325 /* upload_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upload_filled.png; sourceTree = "<group>"; };
 		9CB413671B69672B00B3D325 /* RecommendedBookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendedBookTableViewCell.swift; sourceTree = "<group>"; };
 		9CB413691B69692E00B3D325 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		9CB4138E1B6C121500B3D325 /* menu_filled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_filled@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 		9CB413561B691FF200B3D325 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9CB4138E1B6C121500B3D325 /* menu_filled@2x.png */,
 				9CB413541B691FA800B3D325 /* batman_logo.png */,
 				9CB4135D1B695B3400B3D325 /* facebook_filled.png */,
 				9CB413631B695BD800B3D325 /* instagram_filled.png */,
@@ -255,6 +258,7 @@
 				9CB413341B67FE5C00B3D325 /* LaunchScreen.xib in Resources */,
 				9CB413661B6962A300B3D325 /* upload_filled.png in Resources */,
 				9CB413311B67FE5C00B3D325 /* Images.xcassets in Resources */,
+				9CB4138F1B6C121500B3D325 /* menu_filled@2x.png in Resources */,
 				9CB413641B695BD800B3D325 /* instagram_filled.png in Resources */,
 				9CB413551B691FA800B3D325 /* batman_logo.png in Resources */,
 			);

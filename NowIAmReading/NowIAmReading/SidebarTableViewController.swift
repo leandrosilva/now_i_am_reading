@@ -14,8 +14,8 @@ protocol SidebarTableViewControllerDelegate {
 
 class SidebarTableViewController: UITableViewController {
 
-    var delegate:SidebarTableViewControllerDelegate?
-    var tableData:Array<String> = []
+    var delegate: SidebarTableViewControllerDelegate?
+    var tableData: Array<String> = []
     
     // MARK: - Table view data source
 

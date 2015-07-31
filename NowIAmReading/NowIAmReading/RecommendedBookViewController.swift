@@ -35,8 +35,26 @@ class RecommendedBookViewController: UIViewController {
         bookAuthor.text = book!.author
         bookRecommendedBy.text = book!.recommendedBy
         bookRecommendationText.text = book!.recommendationText
+        
+        setBookRating(book!.rating)
     }
     
+    func setBookRating(rating: Int) {
+        book?.rating = rating
+        
+        let ratingButtons: Array<UIButton> = [bookRating1, bookRating2, bookRating3, bookRating4, bookRating5]
+        
+        for i in 0...4 {
+            deselectRatingButton(ratingButtons[i])
+        }
+        
+        if rating > 0 {
+            for i in 0...(rating - 1) {
+                selectRatingButton(ratingButtons[i])
+            }
+        }
+    }
+
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         view.endEditing(true)
         super.touchesBegan(touches, withEvent: event)
@@ -58,23 +76,46 @@ class RecommendedBookViewController: UIViewController {
     @IBAction func rate(sender: UIButton) {
         switch sender {
         case bookRating1:
-            println("rating 1")
+            if book?.rating == 0 {
+                setBookRating(1)
+            } else if book?.rating == 1 {
+                setBookRating(0)
+            } else {
+                setBookRating(1)
+            }
+            
             break
         case bookRating2:
-            println("rating 2")
+            setBookRating(2)
             break
         case bookRating3:
-            println("rating 3")
+            setBookRating(3)
             break
         case bookRating4:
-            println("rating 4")
+            setBookRating(4)
             break
         case bookRating5:
-            println("rating 5")
+            setBookRating(5)
             break
         default:
-            println("rating 0")
+            setBookRating(0)
         }
+    }
+    
+    func isRatingButtonSelected(ratingButton: UIButton) -> Bool {
+        if ratingButton.titleLabel?.text == "★" {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func selectRatingButton(ratingButton: UIButton) {
+        ratingButton.setTitle("★", forState: UIControlState.Normal)
+    }
+    
+    func deselectRatingButton(ratingButton: UIButton) {
+        ratingButton.setTitle("☆", forState: UIControlState.Normal)
     }
     
     @IBAction func recommend(sender: UIButton) {
@@ -106,5 +147,4 @@ class RecommendedBookViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
