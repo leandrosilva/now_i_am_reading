@@ -254,6 +254,7 @@
                         <outlet property="bookRecommendationText" destination="DK1-qb-n5y" id="TiF-fA-mVk"/>
                         <outlet property="bookRecommendedBy" destination="RyT-Qf-d4v" id="sSJ-KY-VXy"/>
                         <outlet property="bookTitle" destination="xMM-22-u18" id="4xT-9L-GKe"/>
+                        <outlet property="comment" destination="DyX-cB-GLr" id="vXK-Bg-Zlq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IN8-VD-tdu" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -22,13 +22,17 @@ class RecommendedBookViewController: UIViewController {
     @IBOutlet weak var bookRating4: UIButton!
     @IBOutlet weak var bookRating5: UIButton!
     
+    @IBOutlet weak var comment: UITextField!
+    
     var book:Book?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name:UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name:UIKeyboardWillHideNotification, object: nil);
+
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "dismissKeyboard"))
 
         bookPicture.image = UIImage(named: book!.picture)
         bookTitle.text = book!.title
@@ -54,11 +58,6 @@ class RecommendedBookViewController: UIViewController {
             }
         }
     }
-
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        view.endEditing(true)
-        super.touchesBegan(touches, withEvent: event)
-    }
     
     func keyboardWillShow(sender: NSNotification) {
         self.view.frame.origin.y = -220
@@ -66,6 +65,10 @@ class RecommendedBookViewController: UIViewController {
     
     func keyboardWillHide(sender: NSNotification) {
         self.view.frame.origin.y = 0
+    }
+
+    func dismissKeyboard() {
+        comment.resignFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
@@ -137,14 +140,4 @@ class RecommendedBookViewController: UIViewController {
     @IBAction func postComment(sender: UIButton) {
         println("postComment")
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
